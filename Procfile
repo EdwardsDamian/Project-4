@@ -1,1 +1,1 @@
-web: gunicorn YOUR_DJANGO_PROJECT_NAME.wsgi --log-file -
+web: gunicorn pantry_project.wsgi --log-file -
