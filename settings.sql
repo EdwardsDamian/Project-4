@@ -1,0 +1,3 @@
+CREATE DATABASE pantry;
+CREATE USER pantryuser WITH PASSWORD 'pantry';
+GRANT ALL PRIVILEGES ON DATABASE pantry TO pantryuser;
