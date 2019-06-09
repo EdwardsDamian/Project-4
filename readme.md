@@ -3,7 +3,7 @@
 
 ## Overview
 
-The objective of this project was to develop a web application using a React frontend with Django REST Framework (DRF) backend connected by API calls utilzing Axios, the promise based HTTP client.  The engineer chose to undertake the development of an app that would allow it users to track pantry items and other perishable foodstuffs, leveraged to a nationwide grocer’s API.
+The objective of this project was to develop a web application using React as frontend with a Django REST Framework (DRF) backend connected through API calls utilzing Axios, the promise based HTTP client.  The engineer chose to undertake the development of an app that allowed its users to track pantry items and other perishable foodstuffs with their user account's virtual online pantry.  He has also leveraged 3rd party API(s) [from nationwide grocer(s)] so that PantryApp users can obtain listings of nearby store options where they might replenish their perishables.
 
 **Live site demo:** <https://pantryonline.herokuapp.com/>
  

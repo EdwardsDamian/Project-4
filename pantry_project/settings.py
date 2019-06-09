@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'django_extensions',
-    'pantry_app'
+    'pantry_app',
+    'rest_framework.authtoken'
+    # 'model_utils',
 ]
 
 MIDDLEWARE = [
@@ -128,3 +130,15 @@ STATIC_URL = '/static/'
  # Configure Django App for Heroku.
 import django_heroku
 django_heroku.settings(locals())
+
+# control date format saved from the model.
+DATE_INPUT_FORMATS = ['%d-%m-%Y']
+
+
+REST_FRAMEWORK = {   
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users. 
+    'DEFAULT_PERMISSION_CLASSES': [    
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'    
+    ],    
+} 
