@@ -13,10 +13,6 @@ class PantryViewSet(viewsets.ModelViewSet):
     queryset = Pantry.objects.all()
     serializer_class = PantrySerializer
 
-# class ShoppingListViewSet(viewsets.ModelViewSet):
-#     queryset = ShoppingList.objects.all()
-#     serializer_class = ShoppingListSerializer
-
 class UserProfileViewSet(viewsets.ModelViewSet):
     queryset = UserProfile.objects.all()
     serializer_class = UserProfileSerializer

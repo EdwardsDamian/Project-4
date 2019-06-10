@@ -1,5 +1,4 @@
 from django.db import models
-# from model_utils import Choices
 
 # Create your models here.
 class UserProfile(models.Model):
@@ -13,10 +12,7 @@ class UserProfile(models.Model):
         return f"{self.name}, {self.zip_code}"
 
 class Pantry(models.Model):
-    #pass
-    # STATUS = Choices('dry goods cabinet', 'refrigerator')
-    # status = models.CharField(choices=STATUS, default=STATUS.refrigerator, max_length=20)
-#class Item(models.Model):
+ 
     location = models.CharField(default = '', max_length = 40)
     userprofile = models.ForeignKey(UserProfile, on_delete =models.CASCADE, default='', related_name = 'pantry')
 
@@ -36,14 +32,6 @@ class Item(models.Model):
     def __str__(self):
         return self.name    
 
-# class ShoppingList(models.Model):
-    
-#     quantity = models.PositiveSmallIntegerField(blank=False)
-#     item = models.ForeignKey(Item, on_delete =models.CASCADE, default='', related_name = 'shopping_list')
-#     userprofile = models.ForeignKey(UserProfile, on_delete =models.CASCADE, default='', related_name = 'shopping_list')
-
-#     def __str__(self):
-#         return str(self.item)
 
 
      
