@@ -17,11 +17,12 @@ Including another URLconf
 from django.urls import path, include
 from django.contrib import admin
 from rest_framework.authtoken import views as auth_views
-# from . import views
+from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.FrontendAppView.as_view()),
     path('api/v1/', include('pantry_app.urls')),
     # path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    # path('', views.FrontendAppView.as_view()), 
+     
 ]
