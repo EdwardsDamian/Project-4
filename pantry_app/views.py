@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 
-from .serializer import ItemSerializer, PantrySerializer, ShoppingListSerializer, UserProfileSerializer
-from .models import Item, Pantry, ShoppingList, UserProfile
+from .serializers import ItemSerializer, PantrySerializer, UserProfileSerializer
+from .models import Item, Pantry, UserProfile
 
 # Create your views here.
 
@@ -13,9 +13,9 @@ class PantryViewSet(viewsets.ModelViewSet):
     queryset = Pantry.objects.all()
     serializer_class = PantrySerializer
 
-class ShoppingListViewSet(viewsets.ModelViewSet):
-    queryset = ShoppingList.objects.all()
-    serializer_class = ShoppingListSerializer
+# class ShoppingListViewSet(viewsets.ModelViewSet):
+#     queryset = ShoppingList.objects.all()
+#     serializer_class = ShoppingListSerializer
 
 class UserProfileViewSet(viewsets.ModelViewSet):
     queryset = UserProfile.objects.all()

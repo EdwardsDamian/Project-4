@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Item, Pantry, ShoppingList, UserProfile
+from .models import Item, Pantry, UserProfile
 # Register your models here.
 
-admin.site.register([Item, Pantry, ShoppingList, UserProfile])
+admin.site.register([Item, Pantry, UserProfile])
