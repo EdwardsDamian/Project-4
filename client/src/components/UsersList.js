@@ -43,7 +43,7 @@ class UsersList extends Component {
                 <ul>
                     {this.state.userslist.map(user =>(
                         <li key={user.id}>
-                            <Link to={`/userslist/${user.name}`}>{user.name}</Link>
+                            <Link to={`/userslist/${user.id}`}>{user.name}</Link>
                             <button onClick={() => this.editUserProfile(user)}>Edit</button>
                             <button onClick={() => this.deleteUserProfile(user)}>Delete</button>
                         </li>

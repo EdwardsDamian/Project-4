@@ -7,6 +7,8 @@ import Home from './components/Home';
 import About from './components/About';
 import NewUser from './components/NewUsers';
 import UsersList from './components/UsersList';
+import User from './components/User';
+import Items from './components/Items';
 
 
 class App extends Component {
@@ -21,6 +23,10 @@ class App extends Component {
               <Route exact path="/about" component={ About } />
               <Route exact path="/newusers" component={ NewUser } />
               <Route exact path="/userslist" component={ UsersList } />
+              <Route path="/userslist/:userId" component={ User } />
+              <Route exact path="/items" component={ Items } />
+              <Route path="/items/:itemId" component={ Items } />
+              <Route exact path="/pantries" component={ User } />
           </Switch>
         </div>
       </Router>

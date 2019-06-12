@@ -13,7 +13,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
 
     class Meta:
         model=UserProfile
-        fields=('name', 'address', 'city', 'state', 'zip_code', 'items', 'pantry')
+        fields=('id', 'name', 'address', 'city', 'state', 'zip_code', 'items', 'pantry')
 
 class PantrySerializer(serializers.ModelSerializer):
     items = serializers.PrimaryKeyRelatedField(
@@ -26,7 +26,7 @@ class PantrySerializer(serializers.ModelSerializer):
 
     class Meta:
         model=Pantry
-        fields=('userprofile','location', 'items')
+        fields=('id', 'userprofile','location', 'items')
 
 class ItemSerializer(serializers.ModelSerializer):
     userprofile = serializers.PrimaryKeyRelatedField(
@@ -38,4 +38,4 @@ class ItemSerializer(serializers.ModelSerializer):
 
     class Meta:
         model=Item 
-        fields=('name', 'description', 'size', 'is_perishable', 'expiration_date', 'purchase_date', 'pantry', 'userprofile')
+        fields=('id', 'name', 'description', 'size', 'is_perishable', 'expiration_date', 'purchase_date', 'pantry', 'userprofile')
