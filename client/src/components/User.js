@@ -68,7 +68,7 @@ class User extends Component {
                     {this.state.pantryList.map(pantry =>(
                         <li key={pantry.id}>
                             <Link to = {`/pantries/${pantry.id}`}>{pantry.location}</Link>
-                            <button onClick={() => this.pantryItem(pantry.id)}>Delete</button>
+                            <button onClick={() => this.deletePantry(pantry.id)}>Delete</button>
                         </li>
                     ))}
                 </ul>

@@ -9,6 +9,7 @@ import NewUser from './components/NewUsers';
 import UsersList from './components/UsersList';
 import User from './components/User';
 import Items from './components/Items';
+import Pantries from './components/Pantries';
 
 
 class App extends Component {
@@ -26,7 +27,8 @@ class App extends Component {
               <Route path="/userslist/:userId" component={ User } />
               <Route exact path="/items" component={ Items } />
               <Route path="/items/:itemId" component={ Items } />
-              <Route exact path="/pantries" component={ User } />
+              <Route exact path="/pantries" component={ Pantries } />
+              <Route path="/pantries/:pantryId" component={ Pantries } />
           </Switch>
         </div>
       </Router>

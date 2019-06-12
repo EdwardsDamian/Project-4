@@ -64,7 +64,7 @@ class EditItemsComponent extends Component{
         super(props)
         this.state = {item: props.item}
     }
-    onUserProfileChange = (event) => {
+    onItemChange = (event) => {
         let name = event.target.name
         let value = event.target.value
         this.setState(prevState => ({
