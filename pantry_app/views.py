@@ -4,6 +4,8 @@ from .serializers import ItemSerializer, PantrySerializer, UserProfileSerializer
 from .models import Item, Pantry, UserProfile
 import requests
 from django.http import JsonResponse, HttpResponse
+from django.views import View
+# from decouple import config
 
 # Create your views here.
 
@@ -18,3 +20,13 @@ class PantryViewSet(viewsets.ModelViewSet):
 class UserProfileViewSet(viewsets.ModelViewSet):
     queryset = UserProfile.objects.all()
     serializer_class = UserProfileSerializer
+
+def MarketView(request):
+    request.parser_context['kwargs']['zip_code']
+    print(f"zip: {zip}")
+    response = requests.get(f"https:/search.ams.usda.govfarmersmarkets/v1/data.svczipSearch?zip={zip_code}")
+    # response = requests.get('https://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=30315')
+    # json = response.json()
+    # return JsonResponse(json,safe=False)
+    return HttpResponse(response, content_type='application/json')
+
