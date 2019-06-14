@@ -7,21 +7,25 @@ class UsersList extends Component {
     state = {
         userslist: [],
         popupActive: false,
-        editUsersList: {}
+        editUsersList: {},
+        userProfile: {}
     }
 
     async componentDidMount() {
+        console.log(this.state.userProfile)
         let userslist = await userprofileClient.getAll()
         this.setState({userslist: userslist})
     }
 
     editUserProfile = (userProfile) => {
+        console.log(userProfile)
         this.setState({popupActive: true, editUserProfile: userProfile})
     }
     
     saveUserProfile = async (event, userProfile) => {
         event.preventDefault();
         if(userProfile.id ===''){
+            console.log(userProfile)
             await userprofileClient.create(userProfile)
         } else {
             await userprofileClient.update(userProfile)
@@ -45,7 +49,7 @@ class UsersList extends Component {
                         <li key={user.id}>
                             <Link to={`/userslist/${user.id}`}>{user.name}</Link>
                             <button onClick={() => this.editUserProfile(user)}>Edit</button>
-                            <button onClick={() => this.deleteUserProfile(user)}>Delete</button>
+                            <button onClick={() => this.deleteUserProfile(user.id)}>Delete</button>
                         </li>
                     ))}
                 </ul>

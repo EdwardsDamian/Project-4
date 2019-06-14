@@ -6,7 +6,7 @@ const pantryClient = {
         return response.data
     },
     get: async (id) => {
-        let response = await axios.get(`/api/v1/pantries/${id}`)
+        let response = await axios.get(`/api/v1/pantries/${id}/`)
         return response.data
     },
     create: async (pantry) => {
@@ -18,7 +18,7 @@ const pantryClient = {
         return response.data
     },
     delete: async (id) => {
-        let response = await axios.delete(`/api/v1/pantries/${id}`)
+        let response = await axios.delete(`/api/v1/pantries/${id}/`)
         return response.data
     }
 }

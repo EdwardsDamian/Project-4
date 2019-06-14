@@ -1,7 +1,9 @@
 from rest_framework import viewsets
-
+from django.shortcuts import render
 from .serializers import ItemSerializer, PantrySerializer, UserProfileSerializer
 from .models import Item, Pantry, UserProfile
+import requests
+from django.http import JsonResponse, HttpResponse
 
 # Create your views here.
 

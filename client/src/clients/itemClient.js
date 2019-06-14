@@ -6,7 +6,7 @@ const itemClient = {
         return response.data
     },
     get: async (id) => {
-        let response = await axios.get(`/api/v1/items/${id}`)
+        let response = await axios.get(`/api/v1/items/${id}/`)
         return response.data
     },
     create: async (item) => {
@@ -18,7 +18,7 @@ const itemClient = {
         return response.data
     },
     delete: async (id) => {
-        let response = await axios.delete(`/api/v1/items/${id}`)
+        let response = await axios.delete(`/api/v1/items/${id}/`)
         return response.data
     }
 }
