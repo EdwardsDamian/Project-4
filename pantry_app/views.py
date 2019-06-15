@@ -21,10 +21,10 @@ class UserProfileViewSet(viewsets.ModelViewSet):
     queryset = UserProfile.objects.all()
     serializer_class = UserProfileSerializer
 
-def MarketView(request):
-    request.parser_context['kwargs']['zip_code']
-    print(f"zip: {zip}")
-    response = requests.get(f"https:/search.ams.usda.govfarmersmarkets/v1/data.svczipSearch?zip={zip_code}")
+def MarketView(request,zip_code):
+    # request.parser_context['zip_code']
+    # print(f"zip: {zip}")
+    response = requests.get(f"https://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip={zip_code}")
     # response = requests.get('https://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=30315')
     # json = response.json()
     # return JsonResponse(json,safe=False)

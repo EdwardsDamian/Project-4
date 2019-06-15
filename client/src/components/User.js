@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import userprofileClient from '../clients/userprofileClient'
 import pantryClient from '../clients/pantryClient'
 import itemClient from '../clients/itemClient'
+import marketClient from '../clients/marketClient'
 import styled from 'styled-components'
 
 class User extends Component {
@@ -14,7 +15,8 @@ class User extends Component {
         pantryPopupActive: false,
         editItemsList: {},
         editPantryList: {},
-        selectedPantry: {}
+        selectedPantry: {},
+        markets:[]
     }
     async componentDidMount() {
         let userId = this.props.match.params.userId
@@ -22,6 +24,9 @@ class User extends Component {
         let user = await userprofileClient.get(userId)
         console.log(user)
         this.setState({ user: user })
+        let markets = await marketClient.getAll(user.zip_code)
+        console.log(markets)
+        this.setState({markets: markets})
         // let itemsList = await itemClient.getAll()
         // this.setState({ itemsList: itemsList })
         // let pantryList = await pantryClient.getAll()
@@ -104,6 +109,15 @@ class User extends Component {
                     </ul>
                     <button onClick={() => this.editItem({ id: '', name: '', description: '', size: '', is_perishable: '', expiration_date: '', purchase_date: '' })}>Add Item</button>
                     {this.state.itemPopupActive && <EditItemComponent onSave={this.saveItem} item={this.state.editItem} pantryList={this.state.user.pantry} userId={this.state.user.id} />}
+                    <h2>Farmers Markets Near {this.state.user.name}</h2>
+                    <ul>
+                        {this.state.markets.map(market => (
+                            <li key={market.id}>
+                                {market.marketname}
+                            </li>
+                        ))}
+                    </ul>
+
                 </div>}
             </div>
         )
