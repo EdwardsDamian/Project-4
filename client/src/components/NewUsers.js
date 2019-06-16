@@ -1,12 +1,75 @@
 import React, { Component } from 'react' 
+import userprofileClient from '../clients/userprofileClient'
 
 class NewUsers extends Component {
+    state = {
+        newUsers:[], 
+        popupActive: false,
+        userProfile: {}
+    }
+    async componentDidMount() {
+        let newUsers = await userprofileClient.getAll()
+        this.setState({newUsers: newUsers})
+    }
+    addUserProfile = (userProfile) => {
+        this.setState({popupActive: true, addUserProfile: userProfile})
+    }
+    createNewUser = async (event, userProfile) => {
+        event.preventDefault();
+        if(userProfile.id ===''){
+            console.log(userProfile)
+            await userprofileClient.create(userProfile)
+        } else {
+            await userprofileClient.update(userProfile)
+        }
+        let newUsers = await userprofileClient.getAll()
+        this.setState({popupActive: false, newUsers: newUsers})
+    }
 
     render() {
         return (
             <div>
                 <h1>Hello World from NewUsers.js</h1>
+                <button onClick={() => this.addUserProfile({id:'', name: '', address: '', city: '', state: '', zip_code: ''})}>Add a User</button>
+                {this.state.popupActive && <AddUsersComponent onSave={this.createNewUser} userProfile={this.state.addUserProfile}/>}
             </div>
+        )
+    }
+}
+class AddUsersComponent extends Component{
+    constructor(props){
+        super(props)
+        this.state = {userProfile: props.userProfile}
+    }
+    onUserProfileChange = (event) => {
+        let name = event.target.name
+        let value = event.target.value
+        this.setState(prevState => ({
+            userProfile: {
+                ...prevState.userProfile,
+                [name]: value 
+            }
+        }))
+    }
+    
+    render() {
+        return (
+        <div>
+            <form onSubmit={(event) => this.props.onSave(event, this.state.userProfile)}>
+                <input type="hidden" name="id" value={this.state.userProfile.id} onChange={this.onUserProfileChange} />
+                <label>Name</label>
+                <input type="text" name="name" value={this.state.userProfile.name} onChange={this.onUserProfileChange} />
+                <label>Address</label>
+                <input type="text" name="address" value={this.state.userProfile.address} onChange={this.onUserProfileChange} />
+                <label>City</label>
+                <input type="text" name="city" value={this.state.userProfile.city} onChange={this.onUserProfileChange} />
+                <label>State</label>
+                <input type="text" name="state" value={this.state.userProfile.state} onChange={this.onUserProfileChange} />
+                <label>Zip Code</label>
+                <input type="text" name="zip_code" value={this.state.userProfile.zip_code} onChange={this.onUserProfileChange} />
+                <button>Save</button>
+            </form>
+        </div>
         )
     }
 }
