@@ -19,12 +19,14 @@ The objective of this project was to develop a web application using React as fr
 
 
 ## WhiteBoard
-<!-- <details>
-<summary>Project planning ERM, MVC/MVT, & components diagram</summary>  -->
+<details>
+<summary>Project planning ERM, MVC/MVT, & components diagram</summary> 
+
 ![image](planning/p4-whiteboard3.png)
 ![image](planning/p4-whiteboard1.png)
 ![image](planning/p4-whiteboard2.png)
-<!-- </details> -->
+
+</details>
 
 
 ## Main Application Process & Related Details
