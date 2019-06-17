@@ -18,11 +18,13 @@ The objective of this project was to develop a web application using React as fr
 ## Wireframe
 
 
-## WhiteBoard
-
+## `WhiteBoard`
+![Image](planning/p4-whiteboard3.png)
+![Image](planning/p4-whiteboard1.png)
+![Image](planning/p4-whiteboard2.png)
 
 ## Main Application Process & Related Details
-
+Your Pantry App (🍞yPa🥛) allows its users to manage and track perishable goods and other pantry foodstuffs.  Whether its in the dry goods cabinet, refrigerator or that bunker you've setup for the zombie apocalypse, yPa is your food storage tracking solution.  After setting up a user profile (including a zip code), identifing your pantry / food storage locations; and, 'virtually' storing your items within a designated location(s), the app's backend makes AJAX request to a 3rd party HTTP web API.  This returns a list of local Farmers Markets along with approximate distances (in miles) from the users zip code.
 
 ## Features
 
