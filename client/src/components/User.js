@@ -83,7 +83,7 @@ class User extends Component {
 
     render() {
         return (
-            <div>
+            <div className="component-center">
                 {this.state.user !== null && <div>
                     <h1>{this.state.user.name}'s Information</h1>
                     <h2>Pantry / Food Storage Locations</h2>
@@ -109,7 +109,7 @@ class User extends Component {
                     </ul>
                     <button onClick={() => this.editItem({ id: '', name: '', description: '', size: '', is_perishable: '', expiration_date: '', purchase_date: '' })}>Add Item</button>
                     {this.state.itemPopupActive && <EditItemComponent onSave={this.saveItem} item={this.state.editItem} pantryList={this.state.user.pantry} userId={this.state.user.id} />}
-                    <h2>Farmers Markets Near {this.state.user.name}</h2>
+                    <h2>Farmers Markets Near {this.state.user.name}'s Zip Code</h2>
                     <ul>
                         {this.state.markets.map(market => (
                             <li key={market.id}>
@@ -144,7 +144,7 @@ class EditPantryComponent extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="component-center">
                 <form onSubmit={(event) => this.props.onSave(event, this.state.pantry)}>
                     <input type="hidden" name="id" value={this.state.pantry.id} onChange={this.onPantryChange} />
                     <label>Location</label>
@@ -187,7 +187,7 @@ class EditItemComponent extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="component-center">
                 <form onSubmit={(event) => this.props.onSave(event, this.state.item)}>
                     <select name="pantry" onChange={this.onItemChange} value={this.state.selectedPantry}>
                         {this.props.pantryList.map((pantry, i) => (

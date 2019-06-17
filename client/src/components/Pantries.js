@@ -39,7 +39,7 @@ class Pantries extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="component-center">
                 <h1>Hello World from Pantries.js</h1>
                 <h1> Pantry Details</h1>
                 <ul>

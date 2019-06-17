@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
+import styled from 'styled-components'
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import './App.css';
 import Navigation from './components/Navigation';
@@ -10,16 +10,19 @@ import UsersList from './components/UsersList';
 import User from './components/User';
 import Items from './components/Items';
 import Pantries from './components/Pantries';
+import Layout from './components/Layout';
 
 
 class App extends Component {
   render() {
     return (
       <Router>
-        <Navigation />
+        <Navigation parentState={this.state} />
+        <Layout/>
 
-          <div>
+          <div className="App">
           <Switch>
+              <Route exact path="/" component={ Home } />
               <Route exact path="/home" component={ Home } />
               <Route exact path="/about" component={ About } />
               <Route exact path="/newusers" component={ NewUser } />
