@@ -18,7 +18,7 @@ The objective of this project was to develop a web application using React as fr
 ## Wireframe
 
 
-## `WhiteBoard`
+### `WhiteBoard`
 ![Image](planning/p4-whiteboard3.png)
 ![Image](planning/p4-whiteboard1.png)
 ![Image](planning/p4-whiteboard2.png)
