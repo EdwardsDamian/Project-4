@@ -40,7 +40,7 @@ class Items extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="component-center">
                 <h1>Hello World from Items.js</h1>
                 <h1> Item Listings</h1>
                     {this.state.items.map(item =>{return(

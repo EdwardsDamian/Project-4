@@ -42,7 +42,7 @@ class UsersList extends Component {
 
     render() {
         return (
-            <div>
+            <div className="component-center">
                 <h1>Your Pantry App - Users Listing</h1>
                 <ul>
                     {this.state.userslist.map(user =>(

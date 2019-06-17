@@ -11,9 +11,5 @@ router.register('userprofiles', UserProfileViewSet)
 
 urlpatterns = [
     path('',include(router.urls)),
-    # path('markets/<int:zip_code>/', views.MarketView, name='markets'),
-    # path(r'markets/(<int:zip_code>[\w-]+)',views.MarketView,name='markets'),
     path('markets/<int:zip_code>/', views.MarketView, name="markets")
 ]
-
-# urlpatterns += router.urls

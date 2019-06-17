@@ -10,6 +10,7 @@ import UsersList from './components/UsersList';
 import User from './components/User';
 import Items from './components/Items';
 import Pantries from './components/Pantries';
+import Layout from './components/Layout';
 
 
 class App extends Component {
@@ -17,6 +18,7 @@ class App extends Component {
     return (
       <Router>
         <Navigation parentState={this.state} />
+        <Layout/>
 
           <div className="App">
           <Switch>

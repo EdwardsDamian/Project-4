@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const Styles = styled.div`
-    margin: .5em 0;
+    margin: .01em auto;
     `;
 // export const Navigation = () => (
 
