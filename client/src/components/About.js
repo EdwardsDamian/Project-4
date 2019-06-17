@@ -5,11 +5,15 @@ class About extends Component {
     render() {
         return (
             <div>
-                <h1>Hello World from About.js</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum</p><br></br>
+                <h1>About</h1>
+                <p>Your Pantry App (yPa) was developed by Damian Edwards, PMP as part of a project assignment during a 12-week long software engineering bootcamp immersive course</p><br></br>
                 <br></br>
 
                 <p>Contact Us</p>
+                <div className="about-item"><a color="white" href="mailto:damianedwards@msn.com">damianedwards@msn.com</a></div>
+                <div className="about-item"><span className="about-item">☎︎404.402.9381</span></div>
+
+                
             </div>
         )
     }

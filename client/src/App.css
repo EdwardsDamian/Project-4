@@ -46,6 +46,11 @@ p {
   align-items: justify;
   
 }
+
+.about-item{
+  margin-left: 40px;
+  font-size: 20px;
+}
 button {
   background-color: darkmagenta;
   color: white;

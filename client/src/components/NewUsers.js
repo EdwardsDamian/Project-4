@@ -30,7 +30,7 @@ class NewUsers extends Component {
         return (
             <div>
                 <h1>Welcome NewUsers</h1>
-                <p>We hope you'll find yPa to be a convenient, easy-to-use application for tracking all your pantry's perishable foodstuffs. </p>
+                <p>We hope you'll find yPa to be a convenient, easy-to-use application for tracking all your pantry's perishable foodstuffs. Should you have any comments or suggestions for improvements, please do not hesitate to contact us.  Click on the About menu above and send us your comments.</p>
                 <button onClick={() => this.addUserProfile({id:'', name: '', address: '', city: '', state: '', zip_code: ''})}>Click here to add a New User</button>
                 {this.state.popupActive && <AddUsersComponent onSave={this.createNewUser} userProfile={this.state.addUserProfile}/>}
                 <div className="newuser-wrapper">
