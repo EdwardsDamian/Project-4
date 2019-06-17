@@ -2,7 +2,7 @@ import React, { Component }  from 'react'
 import styled from 'styled-components'
 
 const Styles = styled.div`
-    margin: .1em auto;
+    margin: .01em auto;
     `;
 
 class Layout extends Component {

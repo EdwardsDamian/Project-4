@@ -29,9 +29,14 @@ class NewUsers extends Component {
     render() {
         return (
             <div>
-                <h1>Hello World from NewUsers.js</h1>
-                <button onClick={() => this.addUserProfile({id:'', name: '', address: '', city: '', state: '', zip_code: ''})}>Add a User</button>
+                <h1>Welcome NewUsers</h1>
+                <p>We hope you'll find yPa to be a convenient, easy-to-use application for tracking all your pantry's perishable foodstuffs. </p>
+                <button onClick={() => this.addUserProfile({id:'', name: '', address: '', city: '', state: '', zip_code: ''})}>Click here to add a New User</button>
                 {this.state.popupActive && <AddUsersComponent onSave={this.createNewUser} userProfile={this.state.addUserProfile}/>}
+                <div className="newuser-wrapper">
+                <div className="newuser-img1"></div>
+                <div className="newuser-img2"></div>
+                </div>
             </div>
         )
     }

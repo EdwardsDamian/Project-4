@@ -38,9 +38,12 @@ a {
 }
 
 p {
-  margin: 10px;
-  /* max-width: 1200px; */
+  margin-left: 40px;
+  max-width: 1200px;
   font-size: 25px;
+  display: flex;
+  /* justify-content: center; */
+  align-items: justify;
   
 }
 button {
@@ -114,6 +117,55 @@ button:hover {
   justify-content: center;
   align-items: center;
 }
+
+.img-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+}
+.pantry-img1 {
+  display: flex;
+  background: url('https://img1.cookinglight.timeinc.net/sites/default/files/image/2015/12/main/1601p129-anatomy-healthy-fridge_0.jpg');
+  background-size: cover;
+  width: 200px;
+  height: 200px
+
+}
+
+.pantry-img2 {
+  display: flex;
+  background: url('https://secureservercdn.net/184.168.47.225/f73.7de.myftpupload.com/wp-content/uploads/2014/12/Spacious-Walk-In-Pantry.jpg');
+  background-size: cover;
+  width: 200px;
+  height: 200px
+
+}
+
+.newuser-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+}
+.newuser-img1{
+  display: flex;
+  background: url('https://previews.123rf.com/images/moremarinka/moremarinka1612/moremarinka161200019/68720080-outdoor-refrigerator-with-food-vector-illustration.jpg');
+  background-size: cover;
+  width: 300px;
+  height: 300px
+
+}
+
+.newuser-img2{
+  display: flex;
+  background: url('http://www.scalsys.com/cliparts/pantry-clip-art/pantry-clip-art_787543.jpg');
+  background-size: cover;
+  width: 300px;
+  height: 300px
+
+}
+
 
 
 
