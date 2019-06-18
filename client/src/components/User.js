@@ -75,6 +75,7 @@ class User extends Component {
             pantryPopupActive: false, 
         })
     }
+    
     deletePantry = async (pantryId) => {
         await pantryClient.delete(pantryId)
         let pantryList = await pantryClient.getAll()
