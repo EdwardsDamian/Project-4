@@ -4,7 +4,7 @@ import userprofileClient from '../clients/userprofileClient'
 import pantryClient from '../clients/pantryClient'
 import itemClient from '../clients/itemClient'
 import marketClient from '../clients/marketClient'
-import styled from 'styled-components'
+// import styled from 'styled-components'
 
 class User extends Component {
     state = {
@@ -20,17 +20,17 @@ class User extends Component {
     }
     async componentDidMount() {
         let userId = this.props.match.params.userId
-        console.log(userId)
+        // console.log(userId)
         let user = await userprofileClient.get(userId)
-        console.log(user)
+        // console.log(user)
         this.setState({ user: user })
         let markets = await marketClient.getAll(user.zip_code)
-        console.log(markets)
+        // console.log(markets)
         this.setState({markets: markets})
         // let itemsList = await itemClient.getAll()
         // this.setState({ itemsList: itemsList })
-        // let pantryList = await pantryClient.getAll()
-        // this.setState({ pantryList: pantryList })
+        let pantryList = await pantryClient.getAll()
+        this.setState({ pantryList: pantryList })
     }
     editItem = (item) => {
         this.setState({ itemPopupActive: true, editItem: item })

@@ -47,9 +47,10 @@ p {
   
 }
 
-.about-item{
+.about-item {
   margin-left: 40px;
   font-size: 20px;
+  color: whitesmoke;
 }
 button {
   background-color: darkmagenta;

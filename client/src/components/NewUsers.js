@@ -17,7 +17,7 @@ class NewUsers extends Component {
     createNewUser = async (event, userProfile) => {
         event.preventDefault();
         if(userProfile.id ===''){
-            console.log(userProfile)
+            // console.log(userProfile)
             await userprofileClient.create(userProfile)
         } else {
             await userprofileClient.update(userProfile)

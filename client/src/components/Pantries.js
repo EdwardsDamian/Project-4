@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import userprofileClient from '../clients/userprofileClient'
+
 import pantryClient from '../clients/pantryClient'
-import itemClient from '../clients/itemClient'
-import styled from 'styled-components'
+
 
 class Pantries extends Component {
     state = {
@@ -12,12 +11,12 @@ class Pantries extends Component {
         editPantryList:{}
     }
     async componentDidMount() {
-        let userId = this.props.match.params.userId
-        console.log(userId)
+        // let userId = this.props.match.params.userId
+        // console.log(userId)
         let pantries = await pantryClient.getAll()
         this.setState({pantries: pantries})
-        let pantryId = this.props.match.params.pantryId
-        console.log(pantryId)
+        // let pantryId = this.props.match.params.pantryId
+        // console.log(pantryId)
     }
     editPantry = (pantry) => {
         this.setState({pantryPopupActive: true, editPantry: pantry})

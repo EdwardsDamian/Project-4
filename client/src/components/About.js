@@ -12,6 +12,8 @@ class About extends Component {
                 <p>Contact Us</p>
                 <div className="about-item"><a color="white" href="mailto:damianedwards@msn.com">damianedwards@msn.com</a></div>
                 <div className="about-item"><span className="about-item">☎︎404.402.9381</span></div>
+                <div className="about-item"><a href="https://edwardsdamian.github.io/" target="_blank" rel="noopener noreferrer">Click here to see Damian's website</a></div>
+                
 
                 
             </div>

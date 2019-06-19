@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import userprofileClient from '../clients/userprofileClient'
-import styled from 'styled-components' 
+// import styled from 'styled-components' 
 
 class UsersList extends Component {
     state = {

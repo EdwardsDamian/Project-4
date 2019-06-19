@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import userprofileClient from '../clients/userprofileClient'
-import pantryClient from '../clients/pantryClient'
+
 import itemClient from '../clients/itemClient'
-import styled from 'styled-components'
+// import styled from 'styled-components'
 
 class Items extends Component {
     state = {
@@ -13,12 +12,12 @@ class Items extends Component {
 
     }
     async componentDidMount() {
-        let userId = this.props.match.params.userId
-        console.log(userId)
+        // let userId = this.props.match.params.userId
+        // console.log(userId)
         let items = await itemClient.getAll()
         this.setState({items: items})
-        let itemId = this.props.match.params.itemId
-        console.log(itemId)
+        // let itemId = this.props.match.params.itemId
+        // console.log(itemId)
     }
     editItem = (item) => {
         this.setState({itemPopupActive: true, editItem: item})
