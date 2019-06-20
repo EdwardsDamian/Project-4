@@ -14,15 +14,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
-from django.urls import path, include
+from django.urls import path, include, re_path
 from django.contrib import admin
 from rest_framework.authtoken import views as auth_views
 from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.FrontendAppView.as_view()),
+    path('', views.FrontendAppView.as_view()), #New URL for the index route
     path('api/v1/', include('pantry_app.urls')),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    re_path(r'^.*$', views.FrontendAppView.as_view()), #Says search Frontend for all other routes, so refreshing doesn't make the deployed page error
      
 ]
